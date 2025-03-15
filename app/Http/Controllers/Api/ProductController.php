@@ -82,4 +82,22 @@ class ProductController extends Controller
             'message' => 'Sản phẩm đã bị xóa.'
         ], Response::HTTP_OK);
     }
+
+    /**
+     * Tìm kiếm sản phẩm theo size
+     */
+    public function search(Request $request)
+    {
+        // Lấy size từ query hoặc body, ép kiểu về mảng
+        $sizes = $request->input('size', []); 
+
+        if (!is_array($sizes)) {
+            $sizes = explode(',', $sizes); // Nếu gửi dưới dạng "S,M,L"
+        }
+
+        // Tìm sản phẩm có size chứa ít nhất một giá trị trong $sizes
+        $products = Product::whereJsonContains('detail->size', $sizes)->get();
+
+        return response()->json($products);
+    }
 }
