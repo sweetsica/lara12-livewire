@@ -8,14 +8,18 @@
 </p>
 
 # Lara12-Livewire
+- **Laravel 12**
+- **PostgresSQL 5432**
+- **Nginx 81**
 
-Main:
-    - Post: CRUD 
-    - Product: CRUD, Search
-Branch-2:
-    - Post: CRUD 
-    - Product: CRUD, Search
-    - Category: CRUD, relationship Product
+### Main:
+- **Post**: CRUD  
+- **Product**: CRUD, Search  
+
+### Branch-2:
+- **Post**: CRUD  
+- **Product**: CRUD, Search  
+- **Category**: CRUD, relationship Product  
 
 
 ## License
